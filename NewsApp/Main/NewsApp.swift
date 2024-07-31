@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct NewsAppApp: App {
+struct NewsApp: App {
+    
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }
